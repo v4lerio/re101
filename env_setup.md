@@ -7,12 +7,17 @@ make sure to add a new `dhcpserver` using `VBoxManage`
 
 ## Host on Linux/Mac
 ```
-VBoxManage dhcpserver add --netname re101net --ip 10.10.10.1 --netmask 255.255.255.0 --lowerip 10.10.10.100 --upperip 10.10.10.125 --enable 
+VBoxManage dhcpserver add --netname re101net --server-ip 10.10.10.1 --netmask 255.255.255.0 --lower-ip 10.10.10.111 --upper-ip 10.10.10.112 --enable 
 ```
 
 ## Host on Windows
 ```
-"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" dhcpserver add --netname re101net --ip 10.10.10.1 --netmask 255.255.255.0 --lowerip 10.10.10.100 --upperip 10.10.10.125 --enable 
+"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" dhcpserver add --netname re101net --server-ip 10.10.10.1 --netmask 255.255.255.0 --lower-ip 10.10.10.111 --upper-ip 10.10.10.112 --enable 
+```
+
+## Modify
+```
+VBoxManage dhcpserver modify --network re101net --server-ip 10.10.10.1 --netmask 255.255.255.0 --lower-ip 10.10.10.111 --upper-ip 10.10.10.112 --enable 
 ```
 
 ## Check success/failure
